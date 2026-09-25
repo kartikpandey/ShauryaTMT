@@ -24,7 +24,7 @@ class AppConstants {
   static const int salesManagerUserType = 5;
   static const int teamLeadUserType = 6;
   static const int salesmanUserType = 7;
-  static const int defaultUserType = distributorUserType;
+  static const int defaultUserType = 3;
 
   static const Map<int, String> userTypeLabels = {
     superAdminUserType: 'Super Admin',

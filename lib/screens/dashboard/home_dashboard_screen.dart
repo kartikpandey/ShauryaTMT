@@ -97,16 +97,15 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                   Consumer<OrderProvider>(
                     builder: (context, orderProvider, _) {
                       if (orderProvider.isLoading) {
-                        return const Center(
-                          child: CircularProgressIndicator(),
-                        );
+                        return const Center(child: CircularProgressIndicator());
                       }
 
                       if (orderProvider.orders.isEmpty) {
                         return const SizedBox.shrink();
                       }
 
-                      final recentOrders = orderProvider.orders.take(3).toList();
+                      final recentOrders =
+                          orderProvider.orders.take(3).toList();
 
                       return ListView.builder(
                         shrinkWrap: true,
@@ -227,9 +226,8 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
           value: '${summary.returns}',
           subtitle: 'Flagged for pickup',
           icon: Icons.assignment_return_outlined,
-          accentColor: summary.returns > 0
-              ? AppColors.warningRed
-              : AppColors.textHint,
+          accentColor:
+              summary.returns > 0 ? AppColors.warningRed : AppColors.textHint,
           progress: share(summary.returns),
         ),
       ],
@@ -248,10 +246,7 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  'Dealers',
-                  style: AppTextStyles.headlineSmall(context),
-                ),
+                Text('Dealers', style: AppTextStyles.headlineSmall(context)),
                 Text(
                   '${dealers.length}',
                   style: AppTextStyles.labelMedium(
@@ -284,9 +279,10 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
       width: double.infinity,
       padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
       decoration: BoxDecoration(
-        color: Theme.of(context).brightness == Brightness.dark
-            ? AppColors.darkSurface
-            : AppColors.lightSurface,
+        color:
+            Theme.of(context).brightness == Brightness.dark
+                ? AppColors.darkSurface
+                : AppColors.lightSurface,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: AppColors.borderLight),
       ),
@@ -294,10 +290,7 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
         children: [
           Icon(Icons.people_outline, size: 32, color: AppColors.textHint),
           const SizedBox(height: 8),
-          Text(
-            'No dealers yet',
-            style: AppTextStyles.titleSmall(context),
-          ),
+          Text('No dealers yet', style: AppTextStyles.titleSmall(context)),
           const SizedBox(height: 4),
           Text(
             'Dealers will appear here once they are onboarded.',
@@ -359,12 +352,12 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
           'View Reports',
           Colors.blue,
         ),
-        _buildActionButton(
-          context,
-          Icons.local_shipping_outlined,
-          'Track Shipment',
-          Colors.purple,
-        ),
+        // _buildActionButton(
+        //   context,
+        //   Icons.local_shipping_outlined,
+        //   'Track Shipment',
+        //   Colors.purple,
+        // ),
         _buildActionButton(
           context,
           Icons.settings_outlined,
